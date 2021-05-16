@@ -6,7 +6,10 @@ Multi-Type-TD-TSR Extracting Tables from Document Images using a Multi-stage Pip
 
 # Image Alignment Pre-Processing
 For the image alignment pre-processing step there is one script available:
-* ```deskew.py```
+
+
+*  ```deskew.py```
+
 To apply the image alignment pre-processing algorithm to all images in one folder, you need to execute:
 
     python3 deskew.py
@@ -18,7 +21,9 @@ with the following parameters
 
 # Table Structure Recognition (TSR)
 For the image alignment pre-processing step there is one script available:
+
 * ```tsr.py```
+
 To apply a table structure recognitio algorithm to all images in one folder, you need to execute:
 
     python3 tsr.py
