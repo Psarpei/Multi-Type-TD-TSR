@@ -32,7 +32,7 @@ To apply a table structure recognitio algorithm to all images in one folder, you
 with the following parameters
 
 * ```--folder``` path of the input folder including table images
-* ```--type``` the table structure recognition type ```type in ["borderd", "unbordered", "partially", "partially_color_inv"]```
+* ```--type``` the table structure recognition type ```type in ["borderd", "unbordered", "partially", "partially_color_inv"] ```
 * ```--img_output``` output folder path for the processed images
 * ```--xml_output``` output folder path for the xml files including bounding boxes
 
