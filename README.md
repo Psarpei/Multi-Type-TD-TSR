@@ -1,6 +1,6 @@
 # Multi-Type-TD-TSR
 Source Code of our Paper:
-Multi-Type-TD-TSR Extracting Tables from Document Images using a Multi-stage Pipeline forTable Detection and Table Structure Recognition:
+Multi-Type-TD-TSR Extracting Tables from Document Images using a Multi-stage Pipeline for Table Detection and Table Structure Recognition:
 
 # Introduction
 This github repository is still being worked on
