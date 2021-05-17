@@ -53,8 +53,8 @@ with the following parameters
 * ```--td_img_output``` output folder path for the produced table cutouts
 * ```--xml_output``` output folder path for the xml files for tables and cells including bounding boxes
 * ```--config``` path of detectron2 configuration file for table detection
-* ```--config``` path of detectron2 yaml file for table detection
-* ```--config``` path of detectron2 model weights for table detection
+* ```--yaml``` path of detectron2 yaml file for table detection
+* ```--weights``` path of detectron2 model weights for table detection
 
 ## Evaluation
 To evaluate the table structure recognition algorithm we provide the following script:
