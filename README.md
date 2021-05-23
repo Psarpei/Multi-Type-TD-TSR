@@ -6,18 +6,12 @@ Source Code of our Paper:
 Multi-Type-TD-TSR Extracting Tables from Document Images using a Multi-stage Pipeline for Table Detection and Table Structure Recognition:
 
 ## Multi-Type-TD-TSR: whole pipeline (left) and partially borrdered tables (right)
-<img align="left" width="390" height="" src="gifs/whole_pipeline.gif">
-<img align="right" width="390" height="" src="gifs/partially_bordered.gif">
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<img align="right" width="390" height="" src="gifs/whole_pipeline.gif">
+This repository contains a multistage pipeline named Multi-Type-TD-TSR, which offers an end-to-end solution for the problem of table recognition. It utilizes state-of-the-art deep learning models for table detection and differentiates between 3 different types of tables based on the tables’ borders. For the table structure recognition we use a deterministic non-data driven algorithm, which works on all table types. We additionally present two algorithms. One for unbordered tables and one for bordered tables, which are the base of the used table structure recognition algorithm. We evaluate Multi-Type-TD-TSR on the ICDAR 2019 table structure recognition dataset and achieve a new state-of-the-art.
 
 ## Multi-Type-TD-TSR on Fully Bordered Tables (left) and Unboardered Tables (right)
+
+<img align="right" width="390" height="" src="gifs/partially_bordered.gif">
 <img align="left" width="390" height="" src="gifs/fully_bordered.gif">
 <img align="right" width="390" height="" src="gifs/unboardered.gif">
 
