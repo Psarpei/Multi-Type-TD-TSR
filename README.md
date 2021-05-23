@@ -16,6 +16,18 @@ Multi-Type-TD-TSR Extracting Tables from Document Images using a Multi-stage Pip
 # Introduction
 This github repository is work in progress
 
+# Table Structure Recognition Results
+ICDAR 19 (Track B2)
+
+|                 | IoU | IoU | IoU | IoU | Weighted|
+|Team             | 0.6 | 0.7 | 0.8 | 0.9 | Average |
+|-----------------|:---:|-----|-----|-----|---------| 
+|CascadeTabNet    |0.438|0.354|0.19 |0.036|  0.232  |
+|-----------------|-----|-----|-----|-----|---------|
+|NLPR-PAL         |0.365|0.305|0.195|0.035|  0.206  |
+|-----------------|-----|-----|-----|-----|---------|
+|Multi-Type-TD-TSR|0.589|0.404|0.137|0.015|  0.253  |
+
 # Instructions
 ## Image Alignment Pre-Processing
 For the image alignment pre-processing step there is one script available:
