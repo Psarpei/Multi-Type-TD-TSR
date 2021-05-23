@@ -9,10 +9,15 @@ Multi-Type-TD-TSR Extracting Tables from Document Images using a Multi-stage Pip
 <img align="left" width="390" height="" src="gifs/whole_pipeline.gif">
 <img align="right" width="390" height="" src="gifs/partially_bordered.gif">
 
+<br/>
+<br/>
+
 ## Multi-Type-TD-TSR on Fully Bordered Tables (left) and Unboardered Tables (right)
 <img align="left" width="390" height="" src="gifs/fully_bordered.gif">
 <img align="right" width="390" height="" src="gifs/unboardered.gif">
 
+<br/>
+<br/>
 
 
 
