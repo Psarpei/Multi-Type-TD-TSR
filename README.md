@@ -5,16 +5,16 @@ Check it out on <a href="https://colab.research.google.com/github/Psarpei/Multi_
 Source Code of our Paper:
 Multi-Type-TD-TSR Extracting Tables from Document Images using a Multi-stage Pipeline for Table Detection and Table Structure Recognition:
 
-# Multi-Type-TD-TSR: whole pipeline
+## Multi-Type-TD-TSR: whole pipeline
 <img align="center" width="390" height="" src="gifs/whole_pipeline.gif">
 
-# Multi-Type-TD-TSR on Partially Bordered Tables
+## Multi-Type-TD-TSR on Partially Bordered Tables
 <img align="left" width="200" height="" src="gifs/partially_bordered.gif">
 
-# Multi-Type-TD-TSR on Fully Bordered Tables
+## Multi-Type-TD-TSR on Fully Bordered Tables
 <img align="center" width="200" height="" src="gifs/fully_bordered.gif">
 
-# Multi-Type-TD-TSR on Unboardered Tables
+## Multi-Type-TD-TSR on Unboardered Tables
 <img align="right" width="200" height="" src="gifs/unboardered.gif">
 
 
