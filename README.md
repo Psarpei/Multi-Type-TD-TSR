@@ -72,3 +72,8 @@ The evaluation could be started by:
 with the following parameter
 
 * ```--dataset``` dataset folder path containing table images and labels in .xml format
+
+# Get Data
+
+*  test dataset for table structure recognition including table images and annotations can be downloaded [here](https://drive.google.com/drive/folders/1COTV5f7dEAA4Txmxy3LVfcNHiPSc4Bmp?usp=sharing) 
+* table detection detectron2 model weights and configuration files can be downloaded [here](https://drive.google.com/drive/folders/1ry5C9Qs5lyskZeDzBJNYCbNTN1LH1rjn?usp=sharing)
