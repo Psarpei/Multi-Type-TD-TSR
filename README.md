@@ -8,7 +8,7 @@ Multi-Type-TD-TSR Extracting Tables from Document Images using a Multi-stage Pip
 <img align="center" width="1000" height="" src="gifs/whole_pipeline.gif">
 <img align="center" width="1000" height="" src="gifs/partially_bordered.gif">
 <img align="center" width="1000" height="" src="gifs/fully_bordered.gif">
-<img align="center" width="1000" height="" src="gifs/unbordered.gif">
+<img align="center" width="1000" height="" src="gifs/unboardered.gif">
 
 # Introduction
 This github repository is work in progress
