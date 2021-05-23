@@ -25,7 +25,7 @@ For the table structure recognition we offer a simple script for different appro
 
 * ```tsr.py```
 
-To apply a table structure recognition algorithm to all images in one folder, you need to execute:a
+To apply a table structure recognition algorithm to all images in one folder, you need to execute:
 
     python3 tsr.py
 
