@@ -1,4 +1,7 @@
 # Multi-Type-TD-TSR
+Check it out on <a href="https://colab.research.google.com/github.com/Psarpei/Multi_Type_TD_TSR/blob/main/Table_Recognition.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 Source Code of our Paper:
 Multi-Type-TD-TSR Extracting Tables from Document Images using a Multi-stage Pipeline for Table Detection and Table Structure Recognition:
 
