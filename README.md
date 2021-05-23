@@ -42,10 +42,12 @@ TSR for partially bordered tables uses the same erosion algorithm as in bordered
 
 # Instructions
 ## Configurations
-PyTorch = 1.7.0
-Torchvision = 0.8.1
-Cuda = 10.1
-PyYAML = 5.1
+The source code is developed under the following library dependencies
+
+* PyTorch = 1.7.0
+* Torchvision = 0.8.1
+* Cuda = 10.1
+* PyYAML = 5.1
 
 ## Detectron 2
 The table detection model is based on [detectron2](https://github.com/facebookresearch/detectron2) follow this [installation guide](https://detectron2.readthedocs.io/en/latest/tutorials/install.html) to setup.
