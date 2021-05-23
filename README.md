@@ -23,7 +23,10 @@ The TSR algorithm for unbordered tables works similarly to the one for bordered 
 The main goal of our algorithms for bordered and unbordered tables is to create a grid cell image by adding borders in the unbordered case and detecting lines in the bordered case. If a table is only partially bordered, then the unbordered algorithm is prevented to add borders in orthogonal direction to the existing borders, while the bordered algorithm can only find the existing borders. Both approaches result in incomplete grid cell images. 
 <br/>
 <br/>
+<br/>
 TSR for partially bordered tables uses the same erosion algorithm as in bordered tables to detect existing borderes, but without using them to create a grid cell, but to delete the borders from the table image to get an unbordered table. This allows for applying the algorithm for unbordered tables to create the grid-cell image and contours by analogy to the variants discussed above. A key feature of this approach is that it works with both bordered and unbordered tables: it is type-independent.
+<br/>
+<br/>
 
 # Table Structure Recognition Results
 ICDAR 19 (Track B2)
