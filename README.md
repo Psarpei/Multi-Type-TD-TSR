@@ -5,7 +5,7 @@ Check it out on <a href="https://colab.research.google.com/github/Psarpei/Multi_
 Source Code of our Paper:
 Multi-Type-TD-TSR Extracting Tables from Document Images using a Multi-stage Pipeline for Table Detection and Table Structure Recognition:
 
-<img align="center" width="1000" height="" src="gifs/whole_pipeline.gif">
+<img align="center" width="390" height="" src="gifs/whole_pipeline.gif">
 <img align="center" width="1000" height="" src="gifs/partially_bordered.gif">
 <img align="center" width="1000" height="" src="gifs/fully_bordered.gif">
 <img align="center" width="1000" height="" src="gifs/unboardered.gif">
