@@ -14,11 +14,11 @@ As global trends are shifting towards data-driven industries,the demand for auto
 For TSR on fully bordered tables, we use the erosion and dilation operation to extract the row-column grid cell image without any text or characters. The erosion kernels are generally thin vertical and horizontal strips that are longer than the overall font size but shorter than the size of the smallest grid cell and, in particular, must not be wider than the smallest table border width. Using these kernel size constraints results in the erosion operation removing all fonts and characters from the table while preserving the table borders. In order to restore the original line shape, the algorithm applies the dilation operation using the same kernel size on each of the two eroded images, producing an image with vertical and a second with horizontal lines. Finally, the algorithm combines both images by using a bit-wise oroperation and re-inverting the pixel values to obtain a raster cell image. We then use the contours function on the grid-cell image to extract the bounding-boxes for every single grid cell.
 
 ## Multi-Type-TD-TSR on Unboardered Tables 
-<img align="left" width="390" height="" src="gifs/unboardered.gif">
+<img align="right" width="390" height="" src="gifs/unboardered.gif">
 The TSR algorithm for unbordered tables works similarly to the one for bordered tables but utilizes the erosion operation in a different way. The erosion kernel is in general a thin strip with the difference that the horizontal size of the horizontal kernel includes the full image width and the vertical size of the vertical kernel the full image height. The algorithm slides both kernels independently over the whole image from left to right for the vertical kernel, and from top to bottom for the horizontal kernel. During this process it is looking for empty rows and columns that do not contain any characters or font. The resulting images are inverted and combined by a bit-wise and operation producing the final output. The output is a grid-cell image similar to the one from TSR for bordered tables, where the overlapping areas of the two resulting images represent the bounding-boxes for every single grid cell.
 
 ## Multi-Type-TD-TSR on Partially Bordered Tables 
-<img align="right" width="390" height="" src="gifs/partially_bordered.gif">
+<img align="left" width="390" height="" src="gifs/partially_bordered.gif">
 
 
 # Introduction
