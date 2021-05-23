@@ -17,7 +17,7 @@ Multi-Type-TD-TSR Extracting Tables from Document Images using a Multi-stage Pip
 This github repository is work in progress
 
 # Table Structure Recognition Results
-ICDAR 19 (Track B2)
+## ICDAR 19 (Track B2)
 
 |                 | IoU | IoU | IoU | IoU | Weighted|
  -----------------|:---:|-----|-----|-----|---------
