@@ -82,7 +82,7 @@ with the following parameters
 * ```--img_output``` output folder path for the processed images
 * ```--xml_output``` output folder path for the xml files including bounding boxes
 
-## Table Detection and Table Structure Recognition (TSR)
+## Table Detection and Table Structure Recognition (TD & TSR)
 
 To appy the table detection with a followed table structure recogniton 
 
