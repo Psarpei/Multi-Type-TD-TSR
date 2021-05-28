@@ -1,9 +1,12 @@
+
+
+
 # Multi-Type-TD-TSR
 Check it out on <a href="https://colab.research.google.com/github/Psarpei/Multi_Type_TD_TSR/blob/main/Table_Recognition.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 Source Code of our Paper:
-Multi-Type-TD-TSR Extracting Tables from Document Images using a Multi-stage Pipeline for Table Detection and Table Structure Recognition:
+[Multi-Type-TD-TSR](https://arxiv.org/abs/2105.11021) Extracting Tables from Document Images using a Multi-stage Pipeline for Table Detection and Table Structure Recognition:
 
 # Description
 <img align="center" width="1000" height="" src="gifs/Table_Recognition_Pipeline.png">
@@ -29,6 +32,8 @@ The main goal of our algorithms for bordered and unbordered tables is to create 
 TSR for partially bordered tables uses the same erosion algorithm as in bordered tables to detect existing borderes, but without using them to create a grid cell, but to delete the borders from the table image to get an unbordered table. This allows for applying the algorithm for unbordered tables to create the grid-cell image and contours by analogy to the variants discussed above. A key feature of this approach is that it works with both bordered and unbordered tables: it is type-independent.
 <br/>
 <br/>
+
+.
 
 # Table Structure Recognition Results
 ## ICDAR 19 (Track B2)
@@ -121,3 +126,14 @@ with the following parameter
 
 *  test dataset for table structure recognition including table images and annotations can be downloaded [here](https://drive.google.com/drive/folders/1COTV5f7dEAA4Txmxy3LVfcNHiPSc4Bmp?usp=sharing) 
 * table detection detectron2 model weights and configuration files can be downloaded [here](https://drive.google.com/drive/folders/1ry5C9Qs5lyskZeDzBJNYCbNTN1LH1rjn?usp=sharing)
+
+# Citation
+    
+    @misc{li2019tablebank,
+        title={Multi-Type-TD-TSR - Extracting Tables from Document Images using a Multi-stage Pipeline for Table Detection and Table Structure Recognition: from OCR to    Structured Table Representations},
+        author={Pascal Fischer and Alen Smajic and Alexander Mehler and Giuseppe Abrami},
+        year={2021},
+        eprint={2105.11021},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV}
+    }
