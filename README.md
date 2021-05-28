@@ -1,6 +1,3 @@
-
-
-
 # Multi-Type-TD-TSR
 Check it out on <a href="https://colab.research.google.com/github/Psarpei/Multi_Type_TD_TSR/blob/main/Table_Recognition.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
@@ -33,7 +30,11 @@ TSR for partially bordered tables uses the same erosion algorithm as in bordered
 <br/>
 <br/>
 
-.
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
 
 # Table Structure Recognition Results
 ## ICDAR 19 (Track B2)
