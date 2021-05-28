@@ -36,6 +36,10 @@ TSR for partially bordered tables uses the same erosion algorithm as in bordered
 
 <p>&nbsp;</p>
 
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
 # Table Structure Recognition Results
 ## ICDAR 19 (Track B2)
 
