@@ -134,7 +134,7 @@ with the following parameter
 
 # Citation
     
-    @misc{li2019tablebank,
+    @misc{fischer2021multitypetdtsr,
         title={Multi-Type-TD-TSR - Extracting Tables from Document Images using a Multi-stage Pipeline for Table Detection and Table Structure Recognition: from OCR to Structured Table Representations},
         author={Pascal Fischer and Alen Smajic and Alexander Mehler and Giuseppe Abrami},
         year={2021},
