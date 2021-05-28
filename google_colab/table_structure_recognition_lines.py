@@ -68,7 +68,7 @@ def recognize_structure(img):
     # Use horizontal kernel to detect and save the horizontal lines in a jpg
     image_2 = cv2.erode(img_bin, hor_kernel, iterations=3)
     horizontal_lines = cv2.dilate(image_2, hor_kernel, iterations=4)
-    cv2.imwrite("/Users/marius/Desktop/horizontal.jpg", horizontal_lines)
+
     # Plot the generated image
     cv2_imshow(image_2)
   
@@ -86,7 +86,7 @@ def recognize_structure(img):
     cv2_imshow(img_vh)
 
     thresh, img_vh = cv2.threshold(img_vh, 128, 255, cv2.THRESH_BINARY )
-    #cv2.imwrite("/Users/marius/Desktop/img_vh.jpg", img_vh)
+
     cv2_imshow(img_vh)
   
     bitxor = cv2.bitwise_xor(img, img_vh)
@@ -136,7 +136,6 @@ def recognize_structure(img):
     #print("lencontours", len(contours))
     for c in contours:
         x, y, w, h = cv2.boundingRect(c)
-        print("x", x, "y", y, "w", w, "h", h)
         if (w < 0.9*img_width and h < 0.9*img_height):
             image = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
             box.append([x, y, w, h])
@@ -177,7 +176,6 @@ def recognize_structure(img):
     index = 0
     for i in range(len(row)):
         current = len(row[i])
-        print("len",len(row[i]))
         if current > countcol:
             countcol = current
             index = i
