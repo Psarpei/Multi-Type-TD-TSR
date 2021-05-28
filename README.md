@@ -41,6 +41,17 @@ TSR for partially bordered tables uses the same erosion algorithm as in bordered
 |Multi-Type-TD-TSR|0.589|0.404|0.137|0.015|  0.253  |
 
 # Instructions
+## Configurations
+The source code is developed under the following library dependencies
+
+* PyTorch = 1.7.0
+* Torchvision = 0.8.1
+* Cuda = 10.1
+* PyYAML = 5.1
+
+## Detectron 2
+The table detection model is based on [detectron2](https://github.com/facebookresearch/detectron2) follow this [installation guide](https://detectron2.readthedocs.io/en/latest/tutorials/install.html) to setup.
+
 ## Image Alignment Pre-Processing
 For the image alignment pre-processing step there is one script available:
 
@@ -71,7 +82,8 @@ with the following parameters
 * ```--img_output``` output folder path for the processed images
 * ```--xml_output``` output folder path for the xml files including bounding boxes
 
-## Table Detection and Table Structure Recognition (TSR)
+## Table Detection and Table Structure Recognition (TD & TSR)
+
 To appy the table detection with a followed table structure recogniton 
 
 * ```tdtsr.py```
