@@ -26,15 +26,12 @@ def output_to_csv (finalboxes, img):
                                 finalboxes[i][j][k][3]
 
                     finalimg = img[x:x + h, y:y + w]
-                    cv2.imwrite("1-"+str(testx) +".jpg", finalimg)
 
                     kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 1))
                     border = cv2.copyMakeBorder(finalimg, 2, 2, 2, 2, cv2.BORDER_CONSTANT, value=[255, 255])
                     resizing = cv2.resize(border, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
                     dilation = cv2.dilate(resizing, kernel, iterations=1)
                     erosion = cv2.erode(dilation, kernel, iterations=2)
-
-                    cv2.imwrite("2-" + str(testx) + ".jpg", erosion)
 
                     if(erosion.sum() != erosion.shape[0]*erosion.shape[1]*255):
                         out = pytesseract.image_to_string(erosion, config='')
