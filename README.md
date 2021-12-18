@@ -3,7 +3,7 @@ Check it out on <a href="https://colab.research.google.com/github/Psarpei/Multi_
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 Source Code of our Paper:
-[Multi-Type-TD-TSR](https://arxiv.org/abs/2105.11021) Extracting Tables from Document Images using a Multi-stage Pipeline for Table Detection and Table Structure Recognition:
+[Multi-Type-TD-TSR](https://arxiv.org/abs/2105.11021) Extracting Tables from Document Images using a Multi-stage Pipeline for Table Detection and Table Structure Recognition
 
 # Description
 <img align="center" width="1000" height="" src="gifs/Table_Recognition_Pipeline.png">
