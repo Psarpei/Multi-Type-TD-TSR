@@ -29,9 +29,8 @@ if __name__ == "__main__":
         img = cv2.imread(args.folder + "/" + file)
         boxes, img_processed = type_dict[args.type].recognize_structure(img)
         print(args.img_output + "/" + file)
-        if(args.img_output != ""):
+        if args.img_output:
             cv2.imwrite(args.img_output + "/" + file, img_processed)
-        if(args.xml_output != ""):
+        if args.xml_output:
             print(args.xml_output + "/" + file[:-3])
             output_to_xml(boxes, args.xml_output + "/" + file[:-3])
-            
