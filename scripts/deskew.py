@@ -2,67 +2,87 @@ import numpy as np
 import cv2
 import argparse
 import os
+import sys
 
-def deskewImage(img):
-    """
-    adapted from: https://www.pyimagesearch.com/2017/02/20/text-skew-correction-opencv-python/
-    """
-    
-    # use medianBluer to remove black artefacts from the image
-    image = cv2.medianBlur(img, 5)
-    
-    # convert the image to grayscale and flip the foreground
-    # and background to ensure foreground is now "white" and
-    # the background is "black"
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    gray = cv2.bitwise_not(gray)
-    # threshold the image, setting all foreground pixels to
-    # 255 and all background pixels to 0
-    thresh = cv2.threshold(gray, 0, 255,
-    	cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
-    
-    # grab the (x, y) coordinates of all pixel values that
-    # are greater than zero, then use these coordinates to
-    # compute a rotated bounding box that contains all
-    # coordinates
-    coords = np.column_stack(np.where(thresh > 0))
-    angle = cv2.minAreaRect(coords)[-1]
-    # the `cv2.minAreaRect` function returns values in the
-    # range [-90, 0); as the rectangle rotates clockwise the
-    # returned angle trends to 0 -- in this special case we
-    # need to add 90 degrees to the angle
-    if angle < -45:
-    	angle = -(90 + angle)
-    # otherwise, just take the inverse of the angle to make
-    # it positive
-    else:
-    	angle = -angle
-        
-    # rotate the image to deskew it
-    (h, w) = image.shape[:2]
-    center = (w // 2, h // 2)
-    M = cv2.getRotationMatrix2D(center, angle, 1.0)
-    
-    rotated_img = cv2.warpAffine(img, M, (w, h),
-    	flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
+class Image():
+    """Image operations"""
+    def __init__(self, input_folder, file_name, output_folder) -> None:
+        self.input_image_path = f"{input_folder}/{file_name}"
+        self.output_image_path = f"{output_folder}/{file_name}"
+        self.__read_image()
+        self.__blur_image()
+        self.__threshold_image()
+        self.__get_coordinates()
 
-    return rotated_img
+    def __read_image(self) -> None:
+        self.original_image = cv2.imread(self.input_image_path)
+
+    def __blur_image(self) -> None:
+        self.blur_image = cv2.medianBlur(self.original_image, 5) # MedianBlur used to remove black artefacts from the image
+
+    def __threshold_image(self) -> None:
+        self.grayscale_image = cv2.bitwise_not(cv2.cvtColor(self.original_image, cv2.COLOR_BGR2GRAY)) # Grayscale convesion to ensure foreground is white and background is black
+        self.threshold_image = cv2.threshold(
+            self.grayscale_image, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1] # Set all foreground pixels to 255 and background pixels to 0
+
+    def __get_coordinates(self) -> None:
+        self.coordinates = np.column_stack(np.where(self.threshold_image > 0)) # grab the (x, y) coordinates of all pixel values that are greater than zero and compute a bounding box
+
+    def deskew_image(self):
+        """
+        Adapted from:
+        https://www.pyimagesearch.com/2017/02/20/text-skew-correction-opencv-python/
+        """
+
+        angle = cv2.minAreaRect(self.coordinates)[-1] # the `cv2.minAreaRect` function returns values in the range [-90, 0); as the rectangle rotates clockwise the returned angle trends to 0 -- in this special case we need to add 90 degrees to the angle
+        if angle < -45:
+            angle = -(90 + angle)
+        else:
+            angle = -angle
+
+        # rotate the image to deskew it
+        height, width = self.blur_image.shape[:2]
+        center = (width // 2, height // 2)
+        rotation_matrix = cv2.getRotationMatrix2D(center, angle, 1.0)
+
+        self.deskewed_image = cv2.warpAffine(
+            self.original_image, rotation_matrix, (width, height), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
+
+    def write_image(self) -> None:
+        cv2.imwrite(self.output_image_path, self.deskewed_image)
+
+
+
+class Parser():
+    """Defining and parsing command-line arguments"""
+    def __init__(self) -> None:
+        self.parser = argparse.ArgumentParser('deskew', 'python3 -m deskew --input input_folder --output output_folder', 'Deskew images')
+        self.__add_arguments()
+
+    def __add_arguments(self) -> None:
+        """ Add arguments to the parser """
+        self.parser.add_argument("--input", help="Input folder")
+        self.parser.add_argument("--output", help="Output folder")
+        return
+
+    def parse_arguments(self, args: list) -> argparse.Namespace:
+        """ Parse arguments """
+        if args:
+            return self.parser.parse_args(args)
+        else:
+            raise Exception
+
 
 if __name__ == "__main__":
+    parser = Parser()
     
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--folder", help="input folder")
-    parser.add_argument("--output", help="output folder")
-
-    args = parser.parse_args()
+    args = parser.parse_arguments(sys.argv[1:])
 
     files = os.listdir(args.folder)
 
-    for file in files:
-        print(file)
+    for file_ in files:
+        print(file_)
         print(args.folder)
-        img = cv2.imread(args.folder + "/" + file)
-        deskewd_img = deskewImage(img)
-        print(args.output + "/" + file)
-        cv2.imwrite(args.output + "/" + file, deskewd_img)
-        
+        image = Image(args.input, file_, args.output)
+        image.deskew_image()
+        image.write_image()

@@ -32,13 +32,13 @@ if __name__ == "__main__":
     type_dict = {"borderd":tsrl, "unbordered":tsrwol, "partially":tsrlwol, "partially_color_inv":tsra}
     
     parser = argparse.ArgumentParser()
-    parser.add_argument("--folder", help="input folder")
-    parser.add_argument("--tsr_img_output", help="table structure recognition image output folder", default= "")
-    parser.add_argument("--td_img_output", help="table detection image output folder", default= "")
-    parser.add_argument("--xml_output", help="document xml output folder", default="")
-    parser.add_argument("--type", help="borderd,unbordered,partially,partially_color_inv", default="partially")
+    parser.add_argument("--folder", help="Input folder")
+    parser.add_argument("--tsr_img_output", help="Table structure recognition image output folder", default= "")
+    parser.add_argument("--td_img_output", help="Table detection image output folder", default= "")
+    parser.add_argument("--xml_output", help="Document XML output folder", default="")
+    parser.add_argument("--type", help="borderd, unbordered, partially, partially_color_inv", default="partially")
     parser.add_argument("--config", help="detectron2 configuration file for table detection", default="")
-    parser.add_argument("--yaml", help="detectron2 .yaml file for table detection", default="")
+    parser.add_argument("--yaml", help="detectron2.yaml file for table detection", default="")
     parser.add_argument("--weights", help="detectron2 model weights for table detection", default="")
 
     args = parser.parse_args()
@@ -65,12 +65,10 @@ if __name__ == "__main__":
             boxes, table_processed = type_dict[args.type].recognize_structure(table)
             list_table_boxes.append(boxes)
             
-            if(args.tsr_img_output != ""):
+            if args.tsr_img_output:
                 cv2.imwrite(args.tsr_img_output + "/" + file, table_processed)
-            if(args.td_img_output != ""):
+            if args.td_img_output:
                 cv2.imwrite(args.td_img_output + "/" + file, table)
-            if(args.td_xml_output != ""):
+            if args.td_xml_output:
                 print(args.xml_output + "/" + file[:-3])
                 output_to_xml(list_table_boxes, args.xml_output + "/" + file[:-3])
-            
-            

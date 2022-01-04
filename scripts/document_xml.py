@@ -1,5 +1,6 @@
 from lxml import etree
 
+
 def output_to_xml(table_coords, list_table_boxes):
     root = etree.Element("page")
 
