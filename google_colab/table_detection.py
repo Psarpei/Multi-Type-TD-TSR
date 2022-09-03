@@ -15,11 +15,11 @@ def plot_prediction(img, predictor):
     for x1, y1, x2, y2 in outputs["instances"].get_fields()["pred_boxes"].tensor.to("cpu").numpy():
         # Start coordinate 
         # represents the top left corner of rectangle 
-        start_point = (x1, y1) 
+        start_point = int(x1), int(y1) 
   
         # Ending coordinate
         # represents the bottom right corner of rectangle 
-        end_point = (x2, y2) 
+        end_point = int(x2), int(y2) 
   
         # Using cv2.rectangle() method 
         # Draw a rectangle with blue line borders of thickness of 2 px 
